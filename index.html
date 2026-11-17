@@ -272,12 +272,13 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opa
 .dress-box.navy-bg .eyebrow {
   color: var(--gold-2);
 }
+/* FIXED IMAGE SIZE: Fills width naturally, no forced empty boxes */
 .dress-img {
   width: 100%;
-  aspect-ratio: 3/2;
-  object-fit: contain; 
-  margin-bottom: 20px;
+  height: auto;
   display: block;
+  margin: 0 auto 20px;
+  border-radius: 2px;
 }
 .dress-img-placeholder {
   width: 100%;
@@ -407,12 +408,11 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opa
 }
 img.gift-item-img {
   width: 100%;
-  aspect-ratio: 1;
-  object-fit: contain;
+  height: auto;
+  display: block;
   padding: 10px;
   background: #fff;
   margin-bottom: 15px;
-  display: block;
 }
 .gift-item-img-placeholder {
   width: 100%;
@@ -722,6 +722,7 @@ img.gift-item-img {
             <p class="eyebrow">FOR GODPARENTS</p>
             <h3 style="font-family: var(--sans); font-size: 16px; letter-spacing: 0.1em; margin-bottom: 20px;">WHITE</h3>
             
+            <!-- Image fills the box naturally -->
             <img class="dress-img" src="godparents.jpg" alt="Godparents Dress Code" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
             <div class="dress-img-placeholder" style="display:none;">
               Upload godparents.jpg
@@ -733,6 +734,7 @@ img.gift-item-img {
             <p class="eyebrow">FOR GUESTS</p>
             <h3 style="font-family: var(--sans); font-size: 16px; letter-spacing: 0.1em; color: var(--cream); margin-bottom: 20px;">RALPH LAUREN COLOR THEME</h3>
             
+            <!-- Image fills the box naturally -->
             <img class="dress-img" src="Guest.jpg" alt="Guests Dress Code" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
             <div class="dress-img-placeholder" style="display:none; background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.3); color: rgba(255,255,255,0.7);">
               Upload guests.jpg
@@ -813,7 +815,7 @@ img.gift-item-img {
     <!-- GIFT GUIDE SECTION -->
     <section class="gift-section" id="gift-guide">
       <div class="gift-container">
-        <p class="eyebrow" style="color: var(--gold-3);">CARLOS KEI PRIMICIAS MUYOT</p>
+        <p class="eyebrow" style="color: var(--gold-3);">JOHN MICHEAL RAMOS</p>
         <h2 class="script">Gift Guide</h2>
         <div class="ornament"><span>✦</span></div>
         
@@ -829,17 +831,17 @@ img.gift-item-img {
           </div>
           <!-- Item 2 -->
           <div class="gift-item-card">
-            <img class="gift-item-img" src="Spray.jpg" alt="Tiny Buds Fresh Change Micellar Water Diaper Changing Spray" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <img class="gift-item-img" src="Cetaphil.jpg" alt="Cetaphil Baby Gentle Wash & Shampoo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
             <div class="gift-item-img-placeholder" style="display:none;">Upload mustela.jpg</div>
-            <p class="gift-item-title">Tiny Buds Fresh Change Micellar Water Diaper Changing Spray</p>
-            <p class="gift-item-sub">Diaper Changing Spray</p>
+            <p class="gift-item-title">Cetaphil Baby Gentle Wash & Shampoo</p>
+            <p class="gift-item-sub">Baby Gentle Wash & Shampoo</p>
           </div>
           <!-- Item 3 -->
           <div class="gift-item-card">
-            <img class="gift-item-img" src="Cetaphil.jpg" alt="Cetaphil Baby Gentle Wash & Shampoo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <img class="gift-item-img" src="Spray.jpg" alt="Tiny Buds Fresh Change Micellar Water Diaper Changing Spray" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
             <div class="gift-item-img-placeholder" style="display:none;">Upload aveeno.jpg</div>
-            <p class="gift-item-title">Cetaphil Baby Gentle Wash & Shampoo</p>
-            <p class="gift-item-sub">Baby Gentle Wash & Shampoo</p>
+            <p class="gift-item-title">Tiny Buds Fresh Change Micellar Water Diaper Changing Spray</p>
+            <p class="gift-item-sub">Water Diaper Changing Spray</p>
           </div>
         </div>
 
