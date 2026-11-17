@@ -232,7 +232,7 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opa
 .church-card{grid-column:1/-1;text-align:center}
 .church-card .venue-photo{max-width:480px}
 
-/* NEW DRESS CODE SECTION */
+/* DRESS CODE SECTION */
 .dress-code-section {
   padding: clamp(84px,12vw,156px) 22px;
   background: var(--paper);
@@ -272,12 +272,18 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opa
 .dress-box.navy-bg .eyebrow {
   color: var(--gold-2);
 }
+.dress-img {
+  width: 100%;
+  aspect-ratio: 3/2;
+  object-fit: contain; 
+  margin-bottom: 20px;
+  display: block;
+}
 .dress-img-placeholder {
   width: 100%;
   aspect-ratio: 3/2;
   background: #e6ddca;
   border: 1px dashed var(--muted);
-  display: flex;
   align-items: center;
   justify-content: center;
   color: var(--muted);
@@ -300,13 +306,12 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opa
   border: 2px solid #fff;
   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
-/* Swatch colors based on reference image */
-.swatch.c1 { background: #10233a; } /* Navy */
-.swatch.c2 { background: #1d4a2a; } /* Green */
-.swatch.c3 { background: #8fa9c4; } /* Light Blue */
-.swatch.c4 { background: #f6efe2; } /* Cream */
-.swatch.c5 { background: #d1b88e; } /* Tan */
-.swatch.c6 { background: #5e1825; } /* Burgundy */
+.swatch.c1 { background: #10233a; }
+.swatch.c2 { background: #1d4a2a; }
+.swatch.c3 { background: #8fa9c4; }
+.swatch.c4 { background: #f6efe2; }
+.swatch.c5 { background: #d1b88e; }
+.swatch.c6 { background: #5e1825; }
 
 /* GODPARENTS */
 .godparents-section{padding:clamp(84px,12vw,156px) 22px;background:linear-gradient(180deg,var(--cream-2) 0%,var(--cream) 100%);text-align:center;scroll-margin-top:82px}
@@ -337,11 +342,10 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opa
 .health-grid h3{font-family:var(--serif);font-size:21px;font-weight:500;margin:0 0 8px;color:var(--navy)}
 .health-grid p{font-size:15px;color:var(--muted);margin:0;line-height:1.75}
 
-/* NEW GIFT GUIDE SECTION (Based on Image 2) */
+/* GIFT GUIDE SECTION */
 .gift-section {
   padding: clamp(84px,12vw,156px) 22px;
   background-color: var(--cream);
-  /* Plaid background effect */
   background-image: 
     repeating-linear-gradient(90deg, rgba(16,35,58,0.05) 0 2px, transparent 2px 40px),
     repeating-linear-gradient(0deg, rgba(16,35,58,0.05) 0 2px, transparent 2px 40px),
@@ -362,7 +366,6 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opa
   box-shadow: var(--sh-lg);
   position: relative;
 }
-/* Inner border decoration */
 .gift-container::before {
   content: "";
   position: absolute;
@@ -381,8 +384,6 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opa
   max-width: 500px;
   margin: 0 auto 40px;
 }
-
-/* 3-column grid for items */
 .gift-items-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -399,13 +400,21 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opa
   position: relative;
 }
 .gift-item-card::before {
-  /* Navy bow decoration */
   content: "🎀"; 
   position: absolute;
   top: -15px;
   font-size: 24px;
 }
-.gift-item-img {
+img.gift-item-img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: contain;
+  padding: 10px;
+  background: #fff;
+  margin-bottom: 15px;
+  display: block;
+}
+.gift-item-img-placeholder {
   width: 100%;
   aspect-ratio: 1;
   background: #f9f9f9;
@@ -434,8 +443,6 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opa
   font-size: 15px;
   color: var(--muted);
 }
-
-/* Monetary Gift Box */
 .monetary-box {
   border: 1px solid var(--line);
   padding: 30px;
@@ -702,7 +709,7 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opa
       </div>
     </section>
 
-    <!-- NEW DRESS CODE SECTION -->
+    <!-- DRESS CODE SECTION -->
     <section class="dress-code-section" id="dresscode">
       <div class="dress-code-inner">
         <p class="eyebrow">WHAT TO WEAR</p>
@@ -714,8 +721,10 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opa
           <div class="dress-box">
             <p class="eyebrow">FOR GODPARENTS</p>
             <h3 style="font-family: var(--sans); font-size: 16px; letter-spacing: 0.1em; margin-bottom: 20px;">WHITE</h3>
-            <div class="dress-img-placeholder">
-              <img class="baby-photo" src="guests.jpg"
+            
+            <img class="dress-img" src="godparents.jpg" alt="Godparents Dress Code" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="dress-img-placeholder" style="display:none;">
+              Upload godparents.jpg
             </div>
           </div>
           
@@ -723,9 +732,12 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opa
           <div class="dress-box navy-bg">
             <p class="eyebrow">FOR GUESTS</p>
             <h3 style="font-family: var(--sans); font-size: 16px; letter-spacing: 0.1em; color: var(--cream); margin-bottom: 20px;">RALPH LAUREN COLOR THEME</h3>
-            <div class="dress-img-placeholder" style="background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.3); color: rgba(255,255,255,0.7);">
-              Upload Outfit Image Here
+            
+            <img class="dress-img" src="Guest.jpg" alt="Guests Dress Code" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="dress-img-placeholder" style="display:none; background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.3); color: rgba(255,255,255,0.7);">
+              Upload guests.jpg
             </div>
+            
             <!-- Color Palette Swatches -->
             <div class="color-palette">
               <div class="swatch c1"></div>
@@ -798,10 +810,10 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opa
       </div>
     </section>
 
-    <!-- NEW GIFT GUIDE SECTION -->
+    <!-- GIFT GUIDE SECTION -->
     <section class="gift-section" id="gift-guide">
       <div class="gift-container">
-        <p class="eyebrow" style="color: var(--gold-3);">JOHN MICHEAL RAMOS</p>
+        <p class="eyebrow" style="color: var(--gold-3);">CARLOS KEI PRIMICIAS MUYOT</p>
         <h2 class="script">Gift Guide</h2>
         <div class="ornament"><span>✦</span></div>
         
@@ -810,20 +822,24 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opa
         <div class="gift-items-grid">
           <!-- Item 1 -->
           <div class="gift-item-card">
-            <div class="gift-item-img">Diaper.jpg</div>
-            <p class="gift-item-title">Rascals Pants XXL</p>
+            <img class="gift-item-img" src="Diaper.jpg" alt="Rascal Diaper" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="gift-item-img-placeholder" style="display:none;">Upload diaper.jpg</div>
+            <p class="gift-item-title">DIAPER</p>
+            <p class="gift-item-sub">(Rascal XXL)</p>
           </div>
           <!-- Item 2 -->
           <div class="gift-item-card">
-            <div class="gift-item-img">Cetaphil.jpg</div>
-            <p class="gift-item-title">Cetaphil Baby Gentle Wash & Shampoo
-</p>
-            <p class="gift-item-sub">Stelatopia Face Cream</p>
+            <img class="gift-item-img" src="Spray" alt="Tiny Buds Fresh Change Micellar Water Diaper Changing Spray" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="gift-item-img-placeholder" style="display:none;">Upload mustela.jpg</div>
+            <p class="gift-item-title">Tiny Buds Fresh Change Micellar Water Diaper Changing Spray</p>
+            <p class="gift-item-sub">Diaper Changing Spray</p>
           </div>
           <!-- Item 3 -->
           <div class="gift-item-card">
-            <div class="gift-item-img">Spray.jpg</div>
-            <p class="gift-item-title">Tiny Buds Fresh Change Micellar Water Diaper Changing Spray</p>
+            <img class="gift-item-img" src="Cetaphil.jpg" alt="Cetaphil Baby Gentle Wash & Shampoo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="gift-item-img-placeholder" style="display:none;">Upload aveeno.jpg</div>
+            <p class="gift-item-title">Cetaphil Baby Gentle Wash & Shampoo</p>
+            <p class="gift-item-sub">Baby Gentle Wash & Shampoo</p>
           </div>
         </div>
 
@@ -833,7 +849,6 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opa
           <h3>MONETARY GIFT</h3>
           <p>is very much appreciated.</p>
         </div>
-        
       </div>
     </section>
 
